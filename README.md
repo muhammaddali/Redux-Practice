@@ -1,12 +1,48 @@
-# React + Vite
+# Redux Practice Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## What is Redux?
 
-Currently, two official plugins are available:
+Redux is a global state management library often described as the **single source of truth**. It is designed to solve problems like **props drilling** and **complex state management** in JavaScript applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before Redux, a pattern called Flux was commonly used, but it had some limitations. In 2015, during a React conference, **Dan Abramov** introduced Redux as a simpler and more predictable alternative. Although it's commonly used with React, Redux is an **independent library** and can be used with any JavaScript framework.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Slices
+
+### `todosSlice`
+
+**Purpose:**  
+Manages the state and actions related to the **todo list** feature.
+
+**Details:**
+- Handles a list of todos with properties like `id`, `title`, `status`, and `error`.
+- Provides actions such as:
+  - `addToDo` – to add a new todo item.
+  - `removeToDo` – to remove a todo by its ID.
+- Supports asynchronous fetching of todos using `fetchTodos` (implemented via `createAsyncThunk`).
+- Manages state transitions for loading, success, and error cases.
+- Used in the `Todos` component to display, add, and remove todos, while also handling loading and error states in the UI.
+
+---
+
+### `counterSlice`
+
+**Purpose:**  
+Manages the state and actions for a **counter** feature.
+
+**Details:**
+- Tracks a numeric value (e.g., a counter).
+- Provides actions such as:
+  - `increment`
+  - `decrement`
+  - `reset`
+- Used in the `Counter` component to display and update the counter value.
+
+---
+
+## Store Setup
+
+The Redux store is configured to include both `todosSlice` and `counterSlice` reducers. This enables centralized and global state management for both the todo list and counter features.
+
+
