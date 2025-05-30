@@ -7,7 +7,7 @@ export const fetchTodos = createAsyncThunk("todo/fetchTodos", async () => {
 });
 
 const initialState = {
-  todos: [{ id: 1, title: "" }],
+  todos: [{ id: 1, title: "Hellow" }],
 };
 
 const todosSlice = createSlice({
