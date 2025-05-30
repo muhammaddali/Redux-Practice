@@ -1,5 +1,5 @@
 import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
-import { getTodos } from "../../services";
+import { getTodos } from "../../../services";
 
 export const fetchTodos = createAsyncThunk("todo/fetchTodos", async () => {
   const todos = await getTodos();
@@ -7,7 +7,7 @@ export const fetchTodos = createAsyncThunk("todo/fetchTodos", async () => {
 });
 
 const initialState = {
-  todos: [{ id: 1, text: "" }],
+  todos: [{ id: 1, title: "" }],
 };
 
 const todosSlice = createSlice({
@@ -17,7 +17,7 @@ const todosSlice = createSlice({
     addToDo: (state, action) => {
       const todo = {
         id: nanoid(),
-        text: action.payload,
+        title: action.payload,
         status: "idle",
         error: null,
       };
