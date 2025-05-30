@@ -5,6 +5,7 @@
 Redux is a global state management library often described as the **single source of truth**. It is designed to solve problems like **props drilling** and **complex state management** in JavaScript applications.
 
 Before Redux, a pattern called Flux was commonly used, but it had some limitations. In 2015, during a React conference, **Dan Abramov** introduced Redux as a simpler and more predictable alternative. Although it's commonly used with React, Redux is an **independent library** and can be used with any JavaScript framework.
+Source: https://www.youtube.com/watch?v=1i04-A7kfFI&t=126s
 
 ---
 
