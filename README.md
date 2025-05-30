@@ -46,3 +46,7 @@ Manages the state and actions for a **counter** feature.
 The Redux store is configured to include both `todosSlice` and `counterSlice` reducers. This enables centralized and global state management for both the todo list and counter features.
 
 
+
+https://github.com/user-attachments/assets/63e771af-6b41-43a1-a617-350049029062
+
+
