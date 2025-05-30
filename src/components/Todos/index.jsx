@@ -13,6 +13,7 @@ const Todos = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!text.trim()) return;
     dispatch(addToDo(text));
     setText("");
   };
