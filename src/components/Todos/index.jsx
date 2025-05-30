@@ -5,6 +5,7 @@ import {
   removeToDo,
   fetchTodos,
 } from "../../features/Todos/todosSlice";
+import Loader from "../common/Loader";
 const Todos = () => {
   const [text, setText] = useState("");
   const { status, error, todos } = useSelector((state) => state.todos);
@@ -23,16 +24,16 @@ const Todos = () => {
   if (status === "failed") {
     return (
       <p className="flex justify-center mt-20 text-4xl font-semibold text-red-600">
-       {error || 'Something went wrong!'}
+        {error || "Something went wrong!"}
       </p>
     );
   }
 
   return (
-    <div className="px-20">
+    <div className="px-10 md:px-20">
       {status === "loading" && (
         <p className="flex justify-center mt-20 text-4xl font-semibold text-green-600">
-          Loading...
+          <Loader size={300} />
         </p>
       )}
 
@@ -43,7 +44,7 @@ const Todos = () => {
           </h1>
           <form
             onSubmit={handleSubmit}
-            className="flex items-center gap-4 mb-6"
+            className="flex flex-col md:flex-row w-full items-center gap-4 mb-6"
           >
             <input
               type="text"

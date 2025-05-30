@@ -7,7 +7,7 @@ export const fetchTodos = createAsyncThunk("todo/fetchTodos", async () => {
 });
 
 const initialState = {
-  todos: [{ id: 1, title: "Hellow" }],
+  todos: [{ id: 1, title: "" }],
 };
 
 const todosSlice = createSlice({
@@ -30,11 +30,11 @@ const todosSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.pending, (state) => {
-          state.status = 'loading';
+        state.status = "loading";
         state.todos = [];
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
-          state.status = 'succeeded';
+        state.status = "succeeded";
         state.todos = action.payload;
       })
       .addCase(fetchTodos.rejected, (state, action) => {
